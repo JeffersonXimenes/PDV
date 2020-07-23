@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalPagamento">
+        Confirmar
+    </button>
+
+    <!-- Modal pagamento -->
+    <div class="modal fade" id="modalPagamento" tabindex="-1" role="dialog" aria-labelledby="modalPagamentoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPagamentoLabel">Forma de pagamento: Dinheiro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="sla">
+
+                        <div class="form-group">
+
+                            <label for="formGroupExampleInput">TOTAL</label>
+                            <input type="number" class="form-control" id="total" placeholder="total">
+
+                            <div class="form-group">
+
+                                <label for="formGroupExampleInput">RECEBIDO</label>
+                                <input type="number" class="form-control" id="recebido" placeholder="recebido"
+                                    onblur="calcularTroco()">
+
+                            </div>
+                            <div class="form-group">
+
+                                <label for="formGroupExampleInput">TROCO</label>
+                                <textarea name="aaaaa" id="troco" cols="63" disabled
+                                    style="height: 38px; resize: none;"></textarea>
+
+                                <div class="alert alert-danger" role="alert" style="display: none;" id="insuficiente">
+                                    Quantidade recebida insuficiente
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <a class="btn btn-danger" id="btnCancelarPagamento" href="index.html">Cancelar</a>
+
+                    <a class="btn btn-success" data-dismiss="modal" data-toggle="modal" href="#modalCupom">Confirmar</a>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Modal imprimir cupom-->
+    <div class="modal fade" id="modalCupom" tabindex="-1" role="dialog" aria-labelledby="modalCupomLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCupomLabel">Forma de Pagamento: Dinheiro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>imprimindo cupom ...</p>
+                </div>
+
+                <div class="modal-footer">
+
+                    <a class="btn btn-success" data-dismiss="modal" data-toggle="modal" href="#modalCupomImpresso">Venda
+                        Realiza com sucesso</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal cupom impresso-->
+    <div class="modal fade" id="modalCupomImpresso" tabindex="-1" role="dialog" aria-labelledby="modalCupomLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCupomImpressoLabel">Forma de Pagamento: Dinheiro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> cupom impresso </p>
+                </div>
+
+                <div class="modal-footer">
+
+                    <a class="btn btn-success" data-dismiss="modal" data-toggle="modal" href="#modalCupomEmail">Enviar
+                        Cupom por email</a>
+
+
+                    <a class="btn btn-success" id="btnVendaRealizada" href="index.html">Venda
+                        Realiza com sucesso</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal cupom email-->
+    <div class="modal fade" id="modalCupomEmail" tabindex="-1" role="dialog" aria-labelledby="modalCupomLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCupomEmailLabel">Forma de Pagamento: Dinheiro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="sla">
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+
+                    <a class="btn btn-danger" data-dismiss="modal" data-toggle="modal"
+                        href="#modalCupomImpresso">Cancelar</a>
+
+                    <a class="btn btn-success" data-dismiss="modal" data-toggle="modal" href="#modalCupomEnviado">
+                        Confirmar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal cupom impresso-->
+    <div class="modal fade" id="modalCupomEnviado" tabindex="-1" role="dialog" aria-labelledby="modalCupomLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCupomEnviadoLabel">Forma de Pagamento: Dinheiro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Cupom Enviado </p>
+                </div>
+
+                <div class="modal-footer">
+
+                    <a class="btn btn-success" id="btnVendaRealizada" href="index.html">Venda
+                        Realiza com sucesso</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="js/app.js"></script>
+
+</html>
