@@ -23,3 +23,13 @@ calcularTroco = () => {
         document.getElementById("insuficiente").style.display = "none";
     }
 }
+
+function validaNumero (num) {
+    var permitidos = /[^0-9]/;
+    permitidos.lastIndex = 0;
+    var campo = num;
+    if (permitidos.test(campo.value)) {
+        alert("Digite apenas números!")  
+        campo.value = "";
+    }
+}
