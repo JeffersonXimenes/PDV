@@ -83,18 +83,22 @@ body{
     background-color: rgba(255, 255, 255, 0.50);
 }
 
+.list-group a{
+    font-size: 15px;
+}
+
 .items-flex{
-    /* display: flex;
+    display: inline-flex;
     justify-content: space-between;
-    align-items: flex-end; */
-    /* height: 65vh; */
-    margin-top: 540px;
-    text-align: right;
+    align-items: flex-end;
+    height: 60vh; 
+    text-align: center;
 
 }
 
-.ajusteFlex {
-    
+.valoresPagamento {
+    border-radius: 20px;
+    background-color: #F50823 !important;
     
     
 }
