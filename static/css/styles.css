@@ -100,5 +100,92 @@ body{
     border-radius: 20px;
     background-color: #F50823 !important;
     
+}
+
+/* DAQUI PRA BAIXO FOI UTILIZADO PRA ARRUMAR A MODAL <3 */
+.consertaModal {
+    text-align: center;
+    color: black !important;
+    font-weight: bold;
+     
+}
+
+.consertaModalCPF {
+    text-align: center;
+    color: black !important;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.consertaModalTitile {
+    text-align: center;
+    color:  #666666 !important;
+    font-weight: bold;   
+    font-size: 20px;
+    justify-content: center;
+    margin-left: 130px;
     
+}
+
+.consertaModalBotton {
+ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;    
+}
+
+.form-group input {
+    text-align: right;
+    font-size: 35px;
+    height: 50px;
+}
+
+.consertModalTitileCliente {
+    text-align: center;
+    color:  #666666 !important;
+    font-weight: bold;   
+    font-size: 20px;
+    justify-content: center;
+    margin-left: 60px;
+}
+
+.consertModalTitleRecarga {
+    text-align: center;
+    color:  #666666 !important;
+    font-weight: bold;   
+    font-size: 20px;
+    justify-content: center;
+    margin-left: 120px;
+}
+    
+
+.bottonRealizadoSucesso {
+    justify-content: center;
+}
+
+.bottonRealizadoSucesso a{
+    width: 450px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.bottonRealizadoCupom a {
+    justify-content: center;
+    width: 450px;
+}
+
+.btn_formaPagamento a {
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.tamanhoCard {
+    height: 210px;
+    width: 210px;
+}
+
+input {
+    font-size: 12px;
 }

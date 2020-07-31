@@ -33,3 +33,18 @@ function validaNumero (num) {
         campo.value = "";
     }
 }
+
+function validaNumeroCPF (num) {
+    var permitidos = /[^0-9.-]/;
+    permitidos.lastIndex = 0;
+    var campo = num;
+    if (permitidos.test(campo.value)) {
+        alert("Digite apenas números!")  
+        campo.value = "";
+    }
+}
+
+
+ 
+
+ 
