@@ -7,6 +7,10 @@ body{
 
     font-size: 28px;
 }
+
+#corpo{
+    margin-left: 2em;
+}
   
 .sidenav {
     height: 100vh;
@@ -51,7 +55,7 @@ body{
 }
 #menu_2{
     margin-top: 5vh;
-    margin-left: 5vw;
+    /* margin-left: 5vw; */
 }
 
 .menu a{
@@ -183,9 +187,14 @@ body{
 
 .tamanhoCard {
     height: 210px;
-    width: 210px;
+    /* width: 210px; */
 }
 
 input {
     font-size: 12px;
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: space-between;
 }
