@@ -106,6 +106,10 @@ body{
     
 }
 
+.telaVendas{
+    margin-left: 100px;
+}
+
 /* DAQUI PRA BAIXO FOI UTILIZADO PRA ARRUMAR A MODAL <3 */
 .consertaModal {
     text-align: center;
@@ -114,7 +118,7 @@ body{
      
 }
 
-.consertaModalCPF {
+.consertaModalCPF, .consertaModalEntradaOperador{
     text-align: center;
     color: black !important;
     font-weight: bold;
@@ -141,7 +145,7 @@ body{
 
 .form-group input {
     text-align: right;
-    font-size: 35px;
+    font-size: 15px;
     height: 50px;
 }
 
