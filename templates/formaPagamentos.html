@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste formas de pagamento</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="../static/css/styles.css" rel="stylesheet">
+
+    <script src="../static/js/app.js"></script>
+</head>
+
+<body>
+
+    <a href="#" data-toggle="modal" data-target="#formasPagamento">
+        <button> Clique aqui </button>
+    </a>
+
+    <div class="modal fade" id="formasPagamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Forma de Pagamento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="formGroupExampleInput">Selecione a forma de Pagamento</label>
+                    <select name="cCargo" id="cCargo" class="form-control" style="height: 47px; margin-top: 2px;"
+                        required>
+                        <option name="" id="" class="form-control" value=""></option>
+                        <option name="cCargo" class="form-control" id="operadoraVivo">Dinheiro
+                        </option>
+                        <option name="cCargo" class="form-control" id="operadoraClaro">Cartão de Debito
+                        </option>
+                        <option name="cCargo" class="form-control" id="operadoraTim">Cartão de Crédito
+                        </option>
+                        <option name="cCargo" class="form-control" id="operadoraOI">Meio a Meio</option>
+                    </select>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+                    <button type="button" class="btn btn-primary">CONFIRMAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script src="../static/js/app.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

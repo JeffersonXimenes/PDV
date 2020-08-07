@@ -1,372 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link href="../static/css/styles.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class='container' id='corpo'>
-            <div class="col-1">
-                <div class="sidenav">
-                    <a href="index.html"><img src="../static/img/iconHomeEdit.png" alt="side_bar" width="30" height="30"></a>
-                    <a href=""><img src="../static/img/iconCartEdit.png" alt="side_bar" width="30" height="30"></a>
-                    <a href=""><img src="../static/img/iconConfigEdit.png" alt="side_bar" width="30" height="30"></a>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="../static/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class='container' id='corpo'>
+        <div class="col-1">
+            <div class="sidenav">
+                <a href="index.html"><img src="../static/img/iconHomeEdit.png" alt="side_bar" width="30"
+                        height="30"></a>
+                <a href=""><img src="../static/img/iconCartEdit.png" alt="side_bar" width="30" height="30"></a>
+                <a href=""><img src="../static/img/iconConfigEdit.png" alt="side_bar" width="30" height="30"></a>
+            </div>
+        </div>
+        <!-- Corpo do sistema -->
+        <div class="main">
+            <div class="row"> <img src="../static/img/logo.png" alt=""></div>
+
+            <!-- Cards de Ação  Primeira Linha-->
+            <div class="row menu" id="menu">
+
+                <div class="col-sm-7 col-md-3">
+                    <a href="#" data-toggle="modal" data-target="#modalRecarga">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">RECARREGUE JÁ</h5>
+                                <p class="card-text">Recarga de Celular</p>
+                                <h5 class="card-title">MÍNIMO</h5>
+                                <h5 class="card-title">R$ 20,00</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-sm-7 col-md-3">
+                    <a href="#" data-toggle="modal" data-target="#modalAbertura">
+                        <div class="card">
+                            <div class="card-body tamanhoCard">
+                                <h5 class="card-title">BORA TRABALHAR</h5>
+                                <!-- <p class="card-text">Abertura de Caixa</p> -->
+                                <p class="card-text">Abertura de Caixa</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-sm-7 col-md-3">
+                    <a href="#" data-toggle="modal" data-target="#modalFechamento">
+                        <div class="card">
+                            <div class="card-body tamanhoCard">
+                                <h5 class="card-title">DESCANSO</h5>
+                                <p class="card-text">Fechamento de Caixa</p>
+
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <!-- Corpo do sistema -->
-            <div class="main">
-                <div class="row"> <img src="../static/img/logo.png" alt=""></div>
+            <!-- Cards de Ação Segunda Linha-->
+            <div class="row menu" id="menu_2">
+                <div class="col-sm-7 col-md-3">
+                    <a href="#" data-toggle="modal" data-target="#modalCpf">
+                        <div class="card tamanhoCard">
+                            <div class="card-body">
+                                <h5 class="card-title">CLIENTE DROGASIL</h5>
+                                <p class="card-text">Identifica Cliente</p>
+                                <h5 class="card-title">DESCONTOS DE ATÉ</h5>
+                                <h5 class="card-title">R$ 10,00</h5>
 
-                <!-- Cards de Ação  Primeira Linha-->
-                <div class="row menu" id="menu">
-
-                    <div class="col-sm-7 col-md-3">
-                        <a href="#">
-                            <div class="card" >
-                                <div class="card-body">
-                                    <h5 class="card-title">RECARREGUE JÁ</h5>
-                                    <p class="card-text" data-toggle="modal" data-target="#modalRecarga">Recarga de Celular</p>
-
-                                    <h5 class="card-title">MÍNIMO</h5>
-                                    <h5 class="card-title">R$ 20,00</h5>
-                                </div>
-                        </a>
-                                <!-- Modal recarga -->
-                                <div class="modal fade" id="modalRecarga" tabindex="-1" role="dialog" aria-labelledby="modalPagamentoLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title consertModalTitleRecarga" id="modalPagamentoLabel">RECARGA DE CELULAR</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form id="sla" style="font-weight: bold; color: black; font-size: 20px;">
-                                                    <div class="form-group">
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label for="formGroupExampleInput">OPERADORA</label>
-                                                                <select name="cCargo"  id="cCargo" class="form-control" style="height: 47px; margin-top: 2px;" required>
-                                                                    <option name="" id="" class="form-control" value=""></option>
-                                                                    <option name="cCargo" class="form-control"  id="operadoraVivo" >VIVO</option>
-                                                                    <option name="cCargo" class="form-control"  id="operadoraClaro">CLARO</option>
-                                                                    <option name="cCargo" class="form-control"  id="operadoraTim"  >TIM</option>
-                                                                    <option name="cCargo" class="form-control"  id="operadoraOI"   >OI</option>
-                                                                </select>
-
-                                                            </div>
-                                                            <div class="col-md-6">
-
-                                                                <label for="formGroupExampleInput">VALOR(R$)</label>
-                                                                <input type="text" class="form-control" id="recebido" placeholder="R$ 0,00">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label for="formGroupExampleInput">NÚMERO</label>
-                                                                <input type="text" class="form-control" id="total" placeholder="(0XX)9XXXX-XXXX">
-                                                            </div>
-                                                            <div class="col-md-6">
-
-                                                                <label for="formGroupExampleInput">CONFIRMAÇÃO</label>
-                                                                <input type="text" class="form-control" id="recebido" placeholder="(0XX)9XXXX-XXXX">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                            <div class="modal-footer">
-                                                <a class="btn btn-danger" id="btnCancelarPagamento"
-                                                href="index.html">CANCELAR
-                                                 </a>
-                                            <a class="btn btn-success" data-dismiss="modal" data-toggle="modal"
-                                                href="#modalCupom">CONFIRMAR
-                                            </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal imprimir cupom-->
-                                <div class="modal fade" id="modalCupom" tabindex="-1" role="dialog"
-                                    aria-labelledby="modalCupomLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title consertModalTitileCliente" id="modalCupomLabel">FORMA DE PAGAMENTO: DINHEIRO</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6" style="text-align: center">
-                                                    <label for="formGroupExampleInput">OPERADORA</label>
-                                                    <p><strong>TIM</strong></p>
-
-                                                </div>
-                                                <div class="col-md-6" style="text-align: center;">
-                                                    <label for="formGroupExampleInput">VALOR</label>
-                                                    <p><strong>R$: 50,00</strong></p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md" style="text-align: center">
-                                                    <label for="formGroupExampleInput">Numero</label>
-                                                    <p><strong>(0XX)9XXXX-XXXX</strong></p>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal" id="Btncancelar">CANCELAR</button>
-
-                                                <a class="btn btn-success" data-dismiss="modal" data-toggle="modal"   href="#modalCupomImpresso">CONFIRMAR</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal cupom impresso-->
-                                <div class="modal fade" id="modalCupomImpresso" tabindex="-1" role="dialog"
-                                    aria-labelledby="modalCupomLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title consertModalTitileCliente" id="modalCupomImpressoLabel">FORMA DE PAGAMENTO: DINHEIRO</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6" style="text-align: center">
-                                                    <label for="formGroupExampleInput">OPERADORA</label>
-                                                    <p><strong>TIM</strong></p>
-                                                </div>
-                                                <div class="col-md-6" style="text-align: center;">
-                                                    <label for="formGroupExampleInput">VALOR</label>
-                                                    <p><strong>R$: 50,00</strong></p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md" style="text-align: center">
-                                                    <label for="formGroupExampleInput">NÚMERO</label>
-                                                    <p><strong>(0XX)9XXXX-XXXX</strong></p>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer bottonRealizadoSucesso">
-                                                <a class="btn btn-success " data-dismiss="modal" data-toggle="modal" href="#modalCupomEnviado">PAGÍNA INICIAL</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal confirmar operadora-->
-                                <div class="modal fade" id="modalCupom" tabindex="-1" role="dialog"
-                                aria-labelledby="modalCupomLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modalCupomLabel">Forma de Pagamento: Dinheiro
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6" style="text-align: center">
-                                                <label for="formGroupExampleInput">Operadora</label>
-                                                <p>TIM</p>
-                                            </div>
-                                            <div class="col-md-6" style="text-align: center;">
-
-                                                <label for="formGroupExampleInput">Valor</label>
-                                                <p>50</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md" style="text-align: center">
-                                                <label for="formGroupExampleInput">Numero</label>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a class="btn btn-success" data-dismiss="modal" data-toggle="modal"
-                                                href="#modalCupomImpresso">Venda
-                                                Realiza com sucesso</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-
-                                <!-- Modal cupom impresso-->
-                                <div class="modal fade" id="modalCupomImpresso" tabindex="-1" role="dialog"
-                                aria-labelledby="modalCupomLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modalCupomImpressoLabel">Forma de Pagamento:
-                                                Dinheiro</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6" style="text-align: center">
-                                                <label for="formGroupExampleInput">Operadora</label>
-                                                <p>TIM</p>
-
-                                            </div>
-                                            <div class="col-md-6" style="text-align: center;">
-                                                <label for="formGroupExampleInput">Valor</label>
-                                                <p>50</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md" style="text-align: center">
-                                                <label for="formGroupExampleInput">Numero</label>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a class="btn btn-success" data-dismiss="modal" data-toggle="modal"
-                                                href="#modalCupomEnviado">Confirmar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
                             </div>
-                        <!-- </a> -->
-                    </div>
-                    <div class="col-sm-7 col-md-3">
-                        <a href="#">
-                            <div class="card">
-                                <div class="card-body tamanhoCard">
-                                    <h5 class="card-title">BORA TRABALHAR</h5>
-                                    <!-- <p class="card-text">Abertura de Caixa</p> -->
-                                    <p class="card-text" data-toggle="modal" data-target="#modalAbertura">Abertura de Caixa</p>
-                                    <!-- Início da Modal ABERTURA -->
-                                    <div class="modal fade" id="modalAbertura" tabindex="-1" role="dialog"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <label class=" consertaModalTitile" style="text-align: center;">ABERTURA
-                                                        DE CAIXA</label>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form id="sla">
-                                                        <div class="form-group">
-                                                            <label class="consertaModal">CONFIRMAR A ABERTURA DO DIA 31/01/2020</label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="modal-footer consertaModalBotton ">
-
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="Btncancelar">CANCELAR</button>
-
-                                                    <a class="btn btn-success" id="btnConfirmarAbertura" href="index.html">CONFIRMAR</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Final Modal -->
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-7 col-md-3">
-                        <a href="#">
-                            <div class="card">
-                                <div class="card-body tamanhoCard">
-                                    <h5 class="card-title">DESCANSO</h5>
-                                    <p class="card-text" data-toggle="modal" data-target="#modalFechamento">Fechamento de Caixa</p>
-                                    <!-- Início da Modal ABERTURA -->
-                                    <div class="modal fade" id="modalFechamento" tabindex="-1" role="dialog"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <label class="consertaModalTitile"
-                                                        style="text-align: center;">FECHAMENTO DE CAIXA</label>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form id="sla">
-                                                        <div class="form-group">
-                                                            <label class="consertaModal">CONFIRMAR O FECHAMENTO DO DIA 31/01/2020</label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="modal-footer consertaModalBotton ">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="Btncancelar">CANCELAR</button>
-
-                                                    <a class="btn btn-success" id="btnConfirmarFechamento" href="index.html">OK</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Final Modal -->
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
-                <!-- Cards de Ação Segunda Linha-->
-                <div class="row menu" id="menu_2">
-                    <div class="col-sm-7 col-md-3">
-                        <a href="#">
-                            <div class="card tamanhoCard">
-                                <div class="card-body">
-                                    <h5 class="card-title">CLIENTE DROGASIL</h5>
-                                    <p class="card-text" data-toggle="modal" data-target="#modalCpf">Identifica Cliente</p>
-                                    <h5 class="card-title">DESCONTOS DE ATÉ</h5>
-                                    <h5 class="card-title">R$ 10,00</h5>
-                        </a>
-                                    <!-- Início da Modal CPF -->
-                                    <div class="modal fade" id="modalCpf" tabindex="-1" role="dialog"
-                                        aria-labelledby="modalCpfLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title consertaModalTitile " id="modalCpfLabel">
-                                                        IDENTIFICA CLIENTE</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body consertaModalCPF">
-                                                    <form id="sla">
-                                                        <div class="form-group">
-                                                            <label for="formGroupExampleInput">CPF</label>
-                                                            <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" onkeyup="validaNumeroCPF(this)" required>
-                                                            <div class="alert alert-success" role="alert" style="display: none;" id="alertCpfValido">Cpf válido</div>
-                                                            <div class="alert alert-danger" role="alert"
-                                                                style="display: none;" id="alertCpfInvalido">
-                                                                Cpf inválido
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="modal-footer consertaModalBotton    ">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCancelarPagamento">CANCELAR</button>
-                                                    <a class="btn btn-success" id="btnConfirmarPagamento" href="vendaProduto.html">OK</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Final Modal -->
-                                </div>
-                            </div>
-                        <!-- </a> -->
-                    </div>
-                    <div class="col-sm-7 col-md-3">
+                <!-- <div class="col-sm-7 col-md-3">
                         <a href="vendaSimples.html">
                             <div class="card tamanhoCard">
                                 <div class="card-body">
@@ -376,80 +90,405 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
-                    <div class="col-sm-7 col-md-3">
-                        <a href="#" data-toggle="modal" data-target="#entradaOperador">
-                            <div class="card tamanhoCard">
-                                <div class="card-body">
-                                    <h5 class="card-title">É DIA DE QUEM?</h5>
-                                    <p class="card-text" >Entrada de Operador</p>
-                                    <h5 class="card-title"></h5>
-                                </div>
-                        </a>        
-                                    <!-- Início da Modal CPF -->
-                                    <div class="modal fade" id="entradaOperador" tabindex="-1" role="dialog"
-                                    aria-labelledby="modalCpfLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title consertaModalTitile " id="modalCpfLabel">
-                                                    MATRÍCULA OPERADOR</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body consertaModalCPF">
-                                                <form id="sla">
-                                                    <div class="form-group">
-                                                        <label for="formGroupExampleInput">MATRÍCULA</label>
-                                                        <input type="text" class="form-control" id="cpf" placeholder="0000000"  required>
-                                                        
-                                                        <div class="alert alert-danger" role="alert"
-                                                            style="display: none;" id="alertCpfInvalido">
-                                                            Cpf inválido
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer consertaModalBotton    ">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCancelarPagamento">CANCELAR</button>
-                                                <a class="btn btn-success" id="btnConfirmarPagamento" href="">OK</a>
-                                            </div>
+                    </div> -->
+                <div class="col-sm-7 col-md-3">
+                    <a href="#" data-toggle="modal" data-target="#entradaOperador">
+                        <div class="card tamanhoCard">
+                            <div class="card-body">
+                                <h5 class="card-title">É DIA DE QUEM?</h5>
+                                <p class="card-text">Entrada de Operador</p>
+                                <h5 class="card-title"></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ----------------------------- -->
+            <!-- Modals -->
+            <!-- Modal recarga -->
+            <div class="modal fade" id="modalRecarga" tabindex="-1" role="dialog" aria-labelledby="modalPagamentoLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title consertModalTitleRecarga" id="modalPagamentoLabel">RECARGA DE CELULAR
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="sla" style="font-weight: bold; color: black; font-size: 20px;">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="formGroupExampleInput">OPERADORA</label>
+                                            <select name="cCargo" id="cCargo" class="form-control"
+                                                style="height: 47px; margin-top: 2px;" required>
+                                                <option name="" id="" class="form-control" value=""></option>
+                                                <option name="cCargo" class="form-control" id="operadoraVivo">VIVO
+                                                </option>
+                                                <option name="cCargo" class="form-control" id="operadoraClaro">CLARO
+                                                </option>
+                                                <option name="cCargo" class="form-control" id="operadoraTim">TIM
+                                                </option>
+                                                <option name="cCargo" class="form-control" id="operadoraOI">OI</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <label for="formGroupExampleInput">VALOR(R$)</label>
+                                            <input type="text" class="form-control" id="recebido" placeholder="R$ 0,00">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="formGroupExampleInput">NÚMERO</label>
+                                            <input type="text" class="form-control" id="total"
+                                                placeholder="(0XX)9XXXX-XXXX">
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <label for="formGroupExampleInput">CONFIRMAÇÃO</label>
+                                            <input type="text" class="form-control" id="recebido"
+                                                placeholder="(0XX)9XXXX-XXXX">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        <!-- </a> -->
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <a class="btn btn-danger" id="btnCancelarPagamento" href="index.html">CANCELAR
+                            </a>
+                            <a class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                                href="#modalCupom">CONFIRMAR
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+            </div>
+            <!-- Modal Confirmar Operadora-->
+            <div class="modal fade" id="modalCupom" tabindex="-1" role="dialog" aria-labelledby="modalCupomLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomLabel">FORMA DE PAGAMENTO:
+                                DINHEIRO</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center">
+                                <label for="formGroupExampleInput">OPERADORA</label>
+                                <p><strong>TIM</strong></p>
+
                             </div>
-                            <div class="modal-body">
-                                ...
+                            <div class="col-md-6" style="text-align: center;">
+                                <label for="formGroupExampleInput">VALOR</label>
+                                <p><strong>R$: 50,00</strong></p>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md" style="text-align: center">
+                                <label for="formGroupExampleInput">Numero</label>
+                                <p><strong>(0XX)9XXXX-XXXX</strong></p>
                             </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                id="Btncancelar">CANCELAR</button>
+
+                            <a class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                                href="#modalCupomImpresso">CONFIRMAR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Imprimir Cupom-->
+            <div class="modal fade" id="modalCupomImpresso" tabindex="-1" role="dialog"
+                aria-labelledby="modalCupomLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomImpressoLabel">FORMA DE
+                                PAGAMENTO: DINHEIRO</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center">
+                                <label for="formGroupExampleInput">OPERADORA</label>
+                                <p><strong>TIM</strong></p>
+                            </div>
+                            <div class="col-md-6" style="text-align: center;">
+                                <label for="formGroupExampleInput">VALOR</label>
+                                <p><strong>R$: 50,00</strong></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md" style="text-align: center">
+                                <label for="formGroupExampleInput">NÚMERO</label>
+                                <p><strong>(0XX)9XXXX-XXXX</strong></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer bottonRealizadoSucesso">
+                            <a class="btn btn-success " data-dismiss="modal" data-toggle="modal"
+                                href="#modalCupomEnviado">PAGÍNA INICIAL</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal confirmar operadora-->
+            <!-- <div class="modal fade" id="modalCupom" tabindex="-1" role="dialog" aria-labelledby="modalCupomLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalCupomLabel">Forma de Pagamento: Dinheiro
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center">
+                                <label for="formGroupExampleInput">Operadora</label>
+                                <p>TIM</p>
+                            </div>
+                            <div class="col-md-6" style="text-align: center;">
+
+                                <label for="formGroupExampleInput">Valor</label>
+                                <p>50</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md" style="text-align: center">
+                                <label for="formGroupExampleInput">Numero</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                                href="#modalCupomImpresso">Venda
+                                Realiza com sucesso</a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Modal cupom impresso-->
+            <!-- <div class="modal fade" id="modalCupomImpresso" tabindex="-1" role="dialog"
+                aria-labelledby="modalCupomLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalCupomImpressoLabel">Forma de Pagamento:
+                                Dinheiro</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center">
+                                <label for="formGroupExampleInput">Operadora</label>
+                                <p>TIM</p>
+
+                            </div>
+                            <div class="col-md-6" style="text-align: center;">
+                                <label for="formGroupExampleInput">Valor</label>
+                                <p>50</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md" style="text-align: center">
+                                <label for="formGroupExampleInput">Numero</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                                href="#modalCupomEnviado">Confirmar</a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- --------------------- -->
+            <!-- Início da Modal ABERTURA -->
+            <div class="modal fade" id="modalAbertura" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <label class=" consertaModalTitile" style="text-align: center;">ABERTURA
+                                DE CAIXA</label>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="sla">
+                                <div class="form-group">
+                                    <label class="consertaModal">CONFIRMAR A ABERTURA DO DIA 31/01/2020</label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer consertaModalBotton ">
+
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                id="Btncancelar">CANCELAR</button>
+
+                            <a class="btn btn-success" id="btnConfirmarAbertura" href="index.html">CONFIRMAR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Início da Modal Fechamento -->
+            <div class="modal fade" id="modalFechamento" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <label class="consertaModalTitile" style="text-align: center;">FECHAMENTO DE CAIXA</label>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="sla">
+                                <div class="form-group">
+                                    <label class="consertaModal">CONFIRMAR O FECHAMENTO DO DIA 31/01/2020</label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer consertaModalBotton ">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                id="Btncancelar">CANCELAR</button>
+                            <a class="btn btn-success" id="btnConfirmarFechamento" href="index.html">CONFIRMAR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Final Modal -->
+
+            <!-- ------------------------------ -->
+            <!-- Início da Modal CPF -->
+            <div class="modal fade" id="modalCpf" tabindex="-1" role="dialog" aria-labelledby="modalCpfLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title consertaModalTitile " id="modalCpfLabel">
+                                IDENTIFICA CLIENTE</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body consertaModalCPF">
+                            <form id="sla">
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">CPF</label>
+                                    <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00"
+                                        onkeyup="validaNumeroCPF(this)" required>
+                                    <div class="alert alert-success" role="alert" style="display: none;"
+                                        id="alertCpfValido">Cpf válido</div>
+                                    <div class="alert alert-danger" role="alert" style="display: none;"
+                                        id="alertCpfInvalido">
+                                        Cpf inválido
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer consertaModalBotton    ">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                id="btnCancelarPagamento">CANCELAR</button>
+                            <a class="btn btn-success" id="btnConfirmarPagamento" href="vendaProduto.html">CONFIRMAR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Final Modal -->
+    
+            <!-- Início da Modal Entrada Operador -->
+            <div class="modal fade" id="entradaOperador" tabindex="-1" role="dialog" aria-labelledby="modalEntradaOperadorLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title consertaModalTitile " id="modalEntradaOperadorLabel">
+                                MATRÍCULA OPERADOR</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body consertaEntradaOperador">
+                            <form id="sla">
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">MATRÍCULA</label>
+                                    <input type="text" class="form-control" id="cpf" placeholder="0000000" required>
+
+                                    <div class="alert alert-danger" role="alert" style="display: none;"
+                                        id="alertCpfInvalido">
+                                        Cpf inválido
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer consertaModalBotton    ">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                id="btnCancelarPagamento">CANCELAR</button>
+                            <a class="btn btn-success" id="btnConfirmarPagamento" href="">CONFIRMAR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- Final Modal Entrada Operador -->
+
+
+
+
+
+
+
+            <!-- ----------------------------------- -->
+            <!-- Modal -->
+            <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="../static/js/app.js"></script>
-        
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    </body>
+    </div> -->
+    <script src="../static/js/app.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
