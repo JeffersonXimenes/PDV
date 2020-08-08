@@ -8,9 +8,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="../static/css/styles.css" rel="stylesheet">
+
+    <script src="../static/js/app.js"></script>
+
+ 
+ 
+
 </head>
 
-<body>
+<body onload="startTime(); startData()" >
+    <script src="../static/js/app.js"></script>
     <div class='container' id='corpo'>
         <div class="col-1">
             <div class="sidenav">
@@ -24,6 +31,15 @@
         <div class="main">
             <div class="row"> <img src="../static/img/logo.png" alt=""></div>
 
+            <div class="float-right text-center VisualDateHours">
+                <div id="hora" style="font-size: 23px;"></div>
+                
+                <!-- PENDENTE FAZER O ÍCONE DE DATA -->
+                <div id="data"></div>
+ 
+                <!-- CAMPO QUEM ESTÁ LOGADO -->
+                <div>Operador de Caixa</div>
+            </div>
             <!-- Cards de Ação  Primeira Linha-->
             <div class="row menu" id="menu">
 
@@ -478,7 +494,7 @@
             </div>
         </div>
     </div> -->
-    <script src="../static/js/app.js"></script>
+ 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
