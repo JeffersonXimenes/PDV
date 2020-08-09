@@ -202,3 +202,9 @@ input {
     display: flex;
     justify-content: space-between;
 }
+
+.VisualDateHours {
+    font-size: 16px; 
+    margin-top: -43px; 
+    color:  #595959;
+}
