@@ -208,3 +208,8 @@ input {
     margin-top: -43px; 
     color:  #595959;
 }
+
+.arrumaData {
+    display: flex;
+    justify-content: space-around;
+}
