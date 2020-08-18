@@ -63,6 +63,11 @@ body{
     color: white;
 }
 
+.btn-success{
+    text-decoration: none;
+    color: white !important;
+}
+
 .card{
     background-color: #F50823;
     border-radius: 1rem ;
@@ -155,7 +160,7 @@ body{
     font-weight: bold;   
     font-size: 20px;
     justify-content: center;
-    margin-left: 60px;
+    /* margin-left: 60px; */
 }
 
 .consertModalTitleRecarga {
@@ -201,4 +206,10 @@ input {
 .modal-footer{
     display: flex;
     justify-content: space-between;
+}
+
+.VisualDateHours {
+    font-size: 16px; 
+    margin-top: -43px; 
+    color:  #595959;
 }
