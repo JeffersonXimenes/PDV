@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="../static/css/styles.css" rel="stylesheet">
- 
+
 
 </head>
 
-<body onload="startTime(); startData()" >
-    <!-- <script src="../static/js/app.js"></script> -->
+<body onload="startTime(); startData()">
     <div class='container' id='corpo'>
+        <!-- Side Bar -->
         <div class="col-1">
             <div class="sidenav">
                 <a href="index.html"><img src="../static/img/iconHomeEdit.png" alt="side_bar" width="30"
@@ -23,97 +23,98 @@
                 <a href=""><img src="../static/img/iconConfigEdit.png" alt="side_bar" width="30" height="30"></a>
             </div>
         </div>
+
+
+
         <!-- Corpo do sistema -->
         <div class="main">
-            <div class="row"> <img src="../static/img/logo.png" alt=""></div>
 
-            <div class="float-right text-center VisualDateHours">
-                <div id="hora" style="font-size: 23px;"></div>
-                
-                <!-- PENDENTE FAZER O ÍCONE DE DATA -->
-                <div id="data"></div>
- 
-                <!-- CAMPO QUEM ESTÁ LOGADO -->
-                <div>Operador de Caixa</div>
-            </div>
-            <!-- Cards de Ação  Primeira Linha-->
-            <div class="row menu" id="menu">
+            <!-- Header -->
+            <header class="col-12">
+                <div class="row"> <img src="../static/img/logo.png" alt=""></div>
 
-                <div class="col-sm-7 col-md-3">
-                    <a href="#" data-toggle="modal" data-target="#modalRecarga">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">RECARREGUE JÁ</h5>
-                                <p class="card-text">Recarga de Celular</p>
-                                <h5 class="card-title">MÍNIMO</h5>
-                                <h5 class="card-title">R$ 20,00</h5>
-                            </div>
-                        </div>
-                    </a>
+                <div class="float-right text-center VisualDateHours">
+                    <div id="hora" style="font-size: 23px;"></div>
+
+                    <!-- PENDENTE FAZER O ÍCONE DE DATA -->
+                    <div id="data"></div>
+
+                    <!-- CAMPO QUEM ESTÁ LOGADO -->
+                    <div>Operador de Caixa</div>
                 </div>
+            </header>
 
+            <!-- Menus de interação -->
+            <div>
+                <!-- Primeira Linha Cards de Ação -->
+                <div class="row menu" id="menu1">
 
-                <div class="col-sm-7 col-md-3">
-                    <a href="#" data-toggle="modal" data-target="#modalAbertura">
-                        <div class="card">
-                            <div class="card-body tamanhoCard">
-                                <h5 class="card-title">BORA TRABALHAR</h5>
-                                <!-- <p class="card-text">Abertura de Caixa</p> -->
-                                <p class="card-text">Abertura de Caixa</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-sm-7 col-md-3">
-                    <a href="#" data-toggle="modal" data-target="#modalFechamento">
-                        <div class="card">
-                            <div class="card-body tamanhoCard">
-                                <h5 class="card-title">DESCANSO</h5>
-                                <p class="card-text">Fechamento de Caixa</p>
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!-- Cards de Ação Segunda Linha-->
-            <div class="row menu" id="menu_2">
-                <div class="col-sm-7 col-md-3">
-                    <a href="#" data-toggle="modal" data-target="#modalCpf">
-                        <div class="card tamanhoCard">
-                            <div class="card-body">
-                                <h5 class="card-title">CLIENTE DROGASIL</h5>
-                                <p class="card-text">Identifica Cliente</p>
-                                <h5 class="card-title">DESCONTOS DE ATÉ</h5>
-                                <h5 class="card-title">R$ 10,00</h5>
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- <div class="col-sm-7 col-md-3">
-                        <a href="vendaSimples.html">
-                            <div class="card tamanhoCard">
+                    <!-- Botão de Recarga -->
+                    <div class="col-sm-7 col-md-3">
+                        <a href="#" data-toggle="modal" data-target="#modalRecarga">
+                            <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">APENAS SIMPLES</h5>
-                                    <p class="card-text">Venda Simples</p>
-                                    <h5 class="card-title">SEM DESCONTOS</h5>
+                                    <h5 class="card-title">RECARREGUE JÁ</h5>
+                                    <p class="card-text">Recarga de Celular</p>
+                                    <h5 class="card-title">MÍNIMO</h5>
+                                    <h5 class="card-title">R$ 20,00</h5>
                                 </div>
                             </div>
                         </a>
-                    </div> -->
-                <div class="col-sm-7 col-md-3">
-                    <a href="#" data-toggle="modal" data-target="#entradaOperador">
-                        <div class="card tamanhoCard">
-                            <div class="card-body">
-                                <h5 class="card-title">É DIA DE QUEM?</h5>
-                                <p class="card-text">Entrada de Operador</p>
- 
+                    </div>
+                    <!-- Botão Abertura de Caixa -->
+                    <div class="col-sm-7 col-md-3">
+                        <a href="#" data-toggle="modal" data-target="#modalAbertura">
+                            <div class="card">
+                                <div class="card-body tamanhoCard">
+                                    <h5 class="card-title">BORA TRABALHAR</h5>
+                                    <p class="card-text">Abertura de Caixa</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    <!-- Botão Fechamento de Caixa -->
+                    <div class="col-sm-7 col-md-3">
+                        <a href="#" data-toggle="modal" data-target="#modalFechamento">
+                            <div class="card">
+                                <div class="card-body tamanhoCard">
+                                    <h5 class="card-title">DESCANSO</h5>
+                                    <p class="card-text">Fechamento de Caixa</p>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Segunda Linha Cards de ação-->
+                <div class="row menu" id="menu2">
+                    <!-- Card Venda -->
+                    <div class="col-sm-7 col-md-3">
+                        <a href="#" data-toggle="modal" data-target="#modalCpf">
+                            <div class="card tamanhoCard">
+                                <div class="card-body">
+                                    <h5 class="card-title">CLIENTE DROGASIL</h5>
+                                    <p class="card-text">Identifica Cliente</p>
+                                    <h5 class="card-title">DESCONTOS DE ATÉ</h5>
+                                    <h5 class="card-title">R$ 10,00</h5>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Botão entrada de Pperador -->
+                    <div class="col-sm-7 col-md-3">
+                        <a href="#" data-toggle="modal" data-target="#entradaOperador">
+                            <div class="card tamanhoCard">
+                                <div class="card-body">
+                                    <h5 class="card-title">É DIA DE QUEM?</h5>
+                                    <p class="card-text">Entrada de Operador</p>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -136,36 +137,37 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label for="formGroupExampleInput">OPERADORA</label>
-                                            <select name="cCargo" id="cCargo" class="form-control"
+                                            <label for="operadoras">OPERADORA</label>
+                                            <select name="operadoras" id="operadoras" class="form-control"
                                                 style="height: 47px; margin-top: 2px;" required>
                                                 <option name="" id="" class="form-control" value=""></option>
-                                                <option name="cCargo" class="form-control" id="operadoraVivo">VIVO
+                                                <option name="operadoras" class="form-control" id="operadoraVivo">VIVO
                                                 </option>
-                                                <option name="cCargo" class="form-control" id="operadoraClaro">CLARO
+                                                <option name="operadoras" class="form-control" id="operadoraClaro">CLARO
                                                 </option>
-                                                <option name="cCargo" class="form-control" id="operadoraTim">TIM
+                                                <option name="operadoras" class="form-control" id="operadoraTim">TIM
                                                 </option>
-                                                <option name="cCargo" class="form-control" id="operadoraOI">OI</option>
+                                                <option name="operadoras" class="form-control" id="operadoraOI">OI
+                                                </option>
                                             </select>
 
                                         </div>
                                         <div class="col-md-6">
 
-                                            <label for="formGroupExampleInput">VALOR(R$)</label>
+                                            <label for="recebido">VALOR(R$)</label>
                                             <input type="text" class="form-control" id="recebido" placeholder="R$ 0,00">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label for="formGroupExampleInput">NÚMERO</label>
-                                            <input type="text" class="form-control" id="total"
+                                            <label for="numeroTelefone">NÚMERO</label>
+                                            <input type="text" class="form-control" id="numeroTelefone"
                                                 placeholder="(0XX)9XXXX-XXXX">
                                         </div>
                                         <div class="col-md-6">
 
-                                            <label for="formGroupExampleInput">CONFIRMAÇÃO</label>
-                                            <input type="text" class="form-control" id="recebido"
+                                            <label for="confirmacaoNumero">CONFIRMAÇÃO</label>
+                                            <input type="text" class="form-control" id="confirmacaoNumero"
                                                 placeholder="(0XX)9XXXX-XXXX">
                                         </div>
                                     </div>
@@ -189,7 +191,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomLabel">FORMA DE PAGAMENTO:
+                            <h5 class="modal-title consertModalTitleCliente" id="modalCupomLabel">FORMA DE PAGAMENTO:
                                 DINHEIRO</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -197,24 +199,23 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6" style="text-align: center">
-                                <label for="formGroupExampleInput">OPERADORA</label>
+                                <label>OPERADORA</label>
                                 <p><strong>TIM</strong></p>
 
                             </div>
                             <div class="col-md-6" style="text-align: center;">
-                                <label for="formGroupExampleInput">VALOR</label>
+                                <label>VALOR</label>
                                 <p><strong>R$: 50,00</strong></p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md" style="text-align: center">
-                                <label for="formGroupExampleInput">Numero</label>
+                                <label>Numero</label>
                                 <p><strong>(0XX)9XXXX-XXXX</strong></p>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"
-                                id="Btncancelar">CANCELAR</button>
+                            <a class="btn btn-danger" data-dismiss="modal" id="Btncancelar" href="">CANCELAR</a>
 
                             <a class="btn btn-success" data-dismiss="modal" data-toggle="modal"
                                 href="#modalCupomImpresso">CONFIRMAR</a>
@@ -228,7 +229,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomImpressoLabel">FORMA DE
+                            <h5 class="modal-title consertModalTitleCliente" id="modalCupomImpressoLabel">FORMA DE
                                 PAGAMENTO: DINHEIRO</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -236,17 +237,17 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6" style="text-align: center">
-                                <label for="formGroupExampleInput">OPERADORA</label>
+                                <label>OPERADORA</label>
                                 <p><strong>TIM</strong></p>
                             </div>
                             <div class="col-md-6" style="text-align: center;">
-                                <label for="formGroupExampleInput">VALOR</label>
+                                <label>VALOR</label>
                                 <p><strong>R$: 50,00</strong></p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md" style="text-align: center">
-                                <label for="formGroupExampleInput">NÚMERO</label>
+                                <label>NÚMERO</label>
                                 <p><strong>(0XX)9XXXX-XXXX</strong></p>
                             </div>
                         </div>
@@ -258,12 +259,12 @@
                 </div>
             </div>
             <!-- --------------------- -->
-            <!-- Início da Modal ABERTURA -->
+            <!-- Início da Modal ABERTURA DE CAIXA-->
             <div class="modal fade" id="modalAbertura" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <label class=" consertaModalTitile" style="text-align: center;">ABERTURA
+                            <label class=" consertaModalTitle" style="text-align: center;">ABERTURA
                                 DE CAIXA</label>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -278,8 +279,7 @@
                         </div>
                         <div class="modal-footer consertaModalBotton ">
 
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"
-                                id="Btncancelar">CANCELAR</button>
+                            <a class="btn btn-danger" data-dismiss="modal" id="Btncancelar" href="">CANCELAR</a>
 
                             <a class="btn btn-success" id="btnConfirmarAbertura" href="index.html">CONFIRMAR</a>
                         </div>
@@ -293,7 +293,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <label class="consertaModalTitile" style="text-align: center;">FECHAMENTO DE CAIXA</label>
+                            <label class="consertaModalTitle" style="text-align: center;">FECHAMENTO DE CAIXA</label>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -306,8 +306,7 @@
                             </form>
                         </div>
                         <div class="modal-footer consertaModalBotton ">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"
-                                id="Btncancelar">CANCELAR</button>
+                            <a class="btn btn-danger" data-dismiss="modal" id="Btncancelar" href="">CANCELAR</a>
                             <a class="btn btn-success" id="btnConfirmarFechamento" href="index.html">CONFIRMAR</a>
                         </div>
                     </div>
@@ -322,7 +321,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title consertaModalTitile " id="modalCpfLabel">
+                            <h5 class="modal-title consertaModalTitle " id="modalCpfLabel">
                                 IDENTIFICA CLIENTE</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -331,7 +330,7 @@
                         <div class="modal-body consertaModalCPF">
                             <form id="sla">
                                 <div class="form-group">
-                                    <label for="formGroupExampleInput">CPF</label>
+                                    <label for="cpf">CPF</label>
                                     <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00"
                                         onkeyup="validaNumeroCPF(this)" required>
                                     <div class="alert alert-success" role="alert" style="display: none;"
@@ -344,32 +343,34 @@
                             </form>
                         </div>
                         <div class="modal-footer consertaModalBotton    ">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"
-                                id="btnCancelarPagamento">CANCELAR</button>
+                            <a class="btn btn-danger" data-dismiss="modal" id="btnCancelarPagamento"
+                                href="">CANCELAR</a>
                             <a class="btn btn-success" id="btnConfirmarPagamento" href="vendaProduto.html">CONFIRMAR</a>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Final Modal -->
-    
+
             <!-- Início da Modal Entrada Operador -->
-            <div class="modal fade" id="entradaOperador" tabindex="-1" role="dialog" aria-labelledby="modalEntradaOperadorLabel"
-                aria-hidden="true">
+            <div class="modal fade" id="entradaOperador" tabindex="-1" role="dialog"
+                aria-labelledby="modalEntradaOperadorLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title consertaModalTitile " id="modalEntradaOperadorLabel">
+                            <h5 class="modal-title consertaModalTitle " id="modalEntradaOperadorLabel">
                                 MATRÍCULA OPERADOR</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
+
                         <div class="modal-body consertaEntradaOperador">
                             <form id="sla">
                                 <div class="form-group">
-                                    <label for="formGroupExampleInput">MATRÍCULA</label>
-                                    <input type="text" class="form-control" id="cpf" placeholder="0000000" required>
+                                    <label for="matricula">MATRÍCULA</label>
+                                    <input type="text" class="form-control" id="matricula" placeholder="0000000"
+                                        required>
 
                                     <div class="alert alert-danger" role="alert" style="display: none;"
                                         id="alertCpfInvalido">
@@ -378,47 +379,22 @@
                                 </div>
                             </form>
                         </div>
+
                         <div class="modal-footer consertaModalBotton    ">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"
-                                id="btnCancelarPagamento">CANCELAR</button>
+                            <a class="btn btn-danger" data-dismiss="modal" id="btnCancelarPagamento"
+                                href="">CANCELAR</a>
                             <a class="btn btn-success" id="btnConfirmarPagamento" href="">CONFIRMAR</a>
                         </div>
                     </div>
                 </div>
             </div>
-             <!-- Final Modal Entrada Operador -->
+            <!-- Final Modal Entrada Operador -->
 
 
 
-
-
-
-
-            <!-- ----------------------------------- -->
-            <!-- Modal -->
-            <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div> -->
- 
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
