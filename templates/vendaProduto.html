@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,10 +11,10 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="../static/css/styles.css" rel="stylesheet">
 
-    <script src="../static/js/app.js"></script>
+    
 </head>
 
-<body>
+<body onload="startTime(); startData()">
     <div class='container' id='corpo'>
         <div class="col-1">
             <div class="sidenav">
@@ -28,6 +29,16 @@
         <div class="main ">
             <!-- LOGOTIPO -->
             <div class="row"> <img src="../static/img/logo.png" alt=""></div>
+
+            <div class="float-right text-center VisualDateHours">
+                <div id="hora" style="font-size: 23px;"></div>
+                
+                <!-- PENDENTE FAZER O ÍCONE DE DATA -->
+                <div id="data"></div>
+ 
+                <!-- CAMPO QUEM ESTÁ LOGADO -->
+                <div>Operador de Caixa</div>
+            </div>
 
             <div class="row mt-5">
                 <div class="d-flex col-sm" id="wrapper">
@@ -81,10 +92,10 @@
                                     <label>Operador: </label>
 
                                     <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        data-target="#modalPagamento">CANCELAR</button>
+                                        data-target="#">CANCELAR</button>
 
                                     <button type="button" class="btn btn-success" data-toggle="modal"
-                                        data-target="#modalPagamento">CONFIRMAR</button>
+                                        data-target="#formasPagamento">CONFIRMAR</button>
 
                                     <input type="text" class="form-control" id="codProduto" placeholder="CPF" readonly>
                                 </div>
@@ -98,15 +109,100 @@
 
             <!-- --------------------------- -->
             <!-- Modals -->
+            <!-- Modal Selecionar forma de pagamento -->
+            <div class="modal fade" id="formasPagamento" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Forma de Pagamento</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="formGroupExampleInput">Selecione a forma de Pagamento</label>
+                            <select name="cCargo" id="pagamento" class="form-control"
+                                style="height: 47px; margin-top: 2px;" required>
+                                <option name="pagamento" id="" class="form-control" value=""></option>
+                                <option name="pagamento" class="form-control" id="dinheiro" value="din">Dinheiro
+                                </option>
+                                <option name="pagamento" class="form-control" id="debito" value="deb">Cartão de Debito
+                                </option>
+                                <option name="pagamento" class="form-control" id="credito" value="cred">Cartão de
+                                    Crédito
+                                </option>
+                                <option name="pagamento" class="form-control" id="mesclado" value="mesc">Meio a Meio
+                                </option>
+                            </select>
 
-            <!-- Modal pagamento -->
-            <div class="modal fade" id="modalPagamento" tabindex="-1" role="dialog"
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">CANCELAR</button>
+                            <a class="btn btn-success" id='confirmaCompra' data-dismiss="modal" data-toggle="modal">CONFIRMAR</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Cartão de Debito -->
+            <div class="modal fade" id="modalDebito" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Pagamento</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="formGroupExampleInput" style="text-align: center;">Ensira o Cartão de Débito na
+                                maquininha</label>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+                            <a class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                                href="#modalCupom">CONFIRMAR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Cartão de Crédito -->
+            <div class="modal fade" id="modalCredito" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Pagamento</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="formGroupExampleInput" style="text-align: center;">Ensira o Cartão de Crédito na
+                                maquininha</label>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+                            <a class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                                href="#modalCupom">CONFIRMAR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal pagamento Dinheiro -->
+            <div class="modal fade" id="modalDinheiro" tabindex="-1" role="dialog"
                 aria-labelledby="modalPagamentoLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title consertModalTitileCliente " id="modalPagamentoLabel">FORMA DE
-                                PAGAMENTO: DINHEIRO</h5>
+                            <h5 class="modal-title consertModalTitileCliente " id="modalPagamentoLabel">Pagamento</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -150,14 +246,14 @@
                     </div>
                 </div>
             </div>
+
             <!-- Modal imprimir cupom-->
             <div class="modal fade" id="modalCupom" tabindex="-1" role="dialog" aria-labelledby="modalCupomLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomLabel">FORMA DE PAGAMENTO:
-                                DINHEIRO</h5>
+                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomLabel">Pagamento</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -179,8 +275,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomImpressoLabel">FORMA DE
-                                PAGAMENTO: DINHEIRO</h5>
+                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomImpressoLabel">Venda Realizada</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -191,11 +286,11 @@
 
                         <div class="modal-footer bottonRealizadoCupom">
                             <a class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
-                            href="#modalVisualizarNota">VISUALIZAÇÃO DA NOTA</a>
-                
+                                href="#modalVisualizarNota">VISUALIZAÇÃO DA NOTA</a>
+
                             <a class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
                                 href="#modalCupomEmail">ENVIAR CUPOM POR EMAIL</a>
-                            
+
                             <a class="btn btn-success" id="btnVendaRealizada" href="index.html">VENDA REALIZADA COM
                                 SUCESSO</a>
                         </div>
@@ -209,8 +304,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomEmailLabel">FORMA DE
-                                PAGAMENTO: DINHEIRO</h5>
+                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomEmailLabel">Pagamento</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -244,8 +338,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomEnviadoLabel">FORMA DE
-                                PAGAMENTO: DINHEIRO</h5>
+                            <h5 class="modal-title consertModalTitileCliente" id="modalCupomEnviadoLabel">Pagamento</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -256,21 +349,24 @@
 
                         <div class="modal-footer bottonRealizadoSucesso">
 
-                            <a class="btn btn-success" id="btnVendaRealizada" href="index.html">VENDA REALIZADA COM SUCESSO</a>
+                            <a class="btn btn-success" id="btnVendaRealizada" href="index.html">VENDA REALIZADA COM
+                                SUCESSO</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- MODAL VISUALIZAÇÃO DA NOTA  -->
-            <div class="modal fade" id="modalVisualizarNota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="overflow-y:auto;">
+            <div class="modal fade" id="modalVisualizarNota" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true" style="overflow-y:auto;">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <!-- icon voltar
                             <a data-dismiss="modal" data-toggle="modal" href="#modalCupomImpresso"><img width="20px" style="top: 10px;" src="../static/img/backVisualizarNota.ico"></a>
                             -->
-                            <button type="button" class="close" data-toggle="modal" data-dismiss="modal" href="#modalCupomImpresso" aria-label="fechar">
+                            <button type="button" class="close" data-toggle="modal" data-dismiss="modal"
+                                href="#modalCupomImpresso" aria-label="fechar">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -291,24 +387,24 @@
                                 </ul>
                                 <!-- INFORMAÇÕES DO PRODUTO QUE FOI VENDIDO   -->
                                 <hr>
-                            
+
                                 <div class="modal-footer">
                                     <div>01 Laxante - Palmolive</div>
                                     <div>29,87</div>
                                 </div>
-                            
+
                                 <div class="modal-footer">
                                     <div>Valor Líquido</div>
                                     <div>29,87</div>
                                 </div>
-                            
+
                                 <!-- INFORMAÇÕES VALOR  -->
                                 <hr>
                                 <div class="modal-footer">
                                     <div>TOTAL BRUTO DE ITENS</div>
                                     <div>29,87</div>
                                 </div>
-                            
+
                                 <div class="modal-footer">
                                     <div class=" ">TOTAL DESCONTOS ITEM</div>
                                     <div class=" ">0,00</div>
@@ -317,16 +413,16 @@
                                     <div class=" "><strong>TOTAL</strong></div>
                                     <div class=" "><strong>29,87</strong></div>
                                 </div>
-                            
+
                                 <!-- OBSERVAÇÕES CONTRIBUINTE -->
                                 <hr>
-                            
+
                                 <div class="modal-footer">
                                     <div class=" ">Observações contribuinte</div>
                                     <div class=" ">Trib Aprox: R$ 0.40 Federeal e 1.15 Estadual</div>
                                 </div>
                                 <hr>
-                            
+
                                 <!-- FORMA PAGAMENTO  -->
                                 <div class="modal-footer">
                                     <div class=" ">Forma de Pagamento: DINHEIRO</div>
@@ -340,11 +436,17 @@
         </div>
     </div>
 
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"> </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <script src="../static/js/app.js"></script>
 </body>
 
 </html>
